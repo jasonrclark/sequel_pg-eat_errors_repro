@@ -1,0 +1,269 @@
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:655: [BUG] Segmentation fault at 0x00000000000008
+ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-darwin13.0]
+
+-- Crash Report log information --------------------------------------------
+   See Crash Report log file under the one of following:
+     * ~/Library/Logs/CrashReporter
+     * /Library/Logs/CrashReporter
+     * ~/Library/Logs/DiagnosticReports
+     * /Library/Logs/DiagnosticReports
+   for more details.
+
+-- Control frame information -----------------------------------------------
+c:0019 p:---- s:0088 e:000087 CFUNC  :yield_hash_rows
+c:0018 p:0014 s:0083 e:000082 BLOCK  /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:655
+c:0017 p:0037 s:0080 e:000079 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:169
+c:0016 p:0048 s:0074 e:000073 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:511
+c:0015 p:0018 s:0067 e:000066 BLOCK  /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:335
+c:0014 p:0008 s:0065 e:000064 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:532
+c:0013 p:0007 s:0061 e:000060 BLOCK  /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:335
+c:0012 p:0008 s:0058 e:000057 BLOCK  /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/connecting.rb:250
+c:0011 p:0163 s:0055 e:000054 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/connection_pool/threaded.rb:98
+c:0010 p:0020 s:0045 e:000044 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/connecting.rb:250
+c:0009 p:0022 s:0041 e:000040 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:335
+c:0008 p:0059 s:0035 e:000034 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb:911
+c:0007 p:0030 s:0028 E:000c00 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:655
+c:0006 p:0019 s:0024 e:000023 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb:1015
+c:0005 p:0029 s:0018 e:000017 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb:334
+c:0004 p:0021 s:0012 e:000011 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/shared/postgres.rb:1312
+c:0003 p:0067 s:0008 E:000b50 METHOD /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/shared/postgres.rb:1321
+c:0002 p:0136 s:0004 E:0012d8 EVAL   ./script.rb:34 [FINISH]
+c:0001 p:0000 s:0002 E:0016b8 TOP    [FINISH]
+
+./script.rb:34:in `<main>'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/shared/postgres.rb:1321:in `insert'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/shared/postgres.rb:1312:in `insert'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb:334:in `insert'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb:1015:in `returning_fetch_rows'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:655:in `fetch_rows'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb:911:in `execute'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:335:in `execute'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/connecting.rb:250:in `synchronize'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/connection_pool/threaded.rb:98:in `hold'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/connecting.rb:250:in `block in synchronize'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:335:in `block in execute'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:532:in `check_database_errors'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:335:in `block (2 levels) in execute'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:511:in `_execute'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:169:in `execute'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:655:in `block in fetch_rows'
+/Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb:655:in `yield_hash_rows'
+
+-- C level backtrace information -------------------------------------------
+0   ruby                                0x00000001034db1d0 rb_vm_bugreport + 144
+1   ruby                                0x000000010338c9e1 report_bug + 305
+2   ruby                                0x000000010338c8a4 rb_bug + 180
+3   ruby                                0x000000010345d51c sigsegv + 156
+4   libsystem_platform.dylib            0x00007fff939005aa _sigtramp + 26
+5   sequel_pg.bundle                    0x0000000103a32508 spg_yield_hash_rows + 40
+6   ???                                 0x0000000000000000 0x0 + 0
+
+-- Other runtime information -----------------------------------------------
+
+* Loaded script: ./script.rb
+
+* Loaded features:
+
+    0 enumerator.so
+    1 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/enc/encdb.bundle
+    2 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/enc/trans/transdb.bundle
+    3 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/rbconfig.rb
+    4 thread.rb
+    5 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/thread.bundle
+    6 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/compatibility.rb
+    7 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/defaults.rb
+    8 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/deprecate.rb
+    9 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/errors.rb
+   10 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/version.rb
+   11 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/requirement.rb
+   12 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/platform.rb
+   13 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/basic_specification.rb
+   14 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/stub_specification.rb
+   15 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/util/stringio.rb
+   16 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/specification.rb
+   17 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/exceptions.rb
+   18 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/core_ext/kernel_gem.rb
+   19 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/monitor.rb
+   20 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/core_ext/kernel_require.rb
+   21 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems.rb
+   22 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/pathname.bundle
+   23 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/pathname.rb
+   24 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/constants.rb
+   25 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/io/console.bundle
+   26 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/user_interaction.rb
+   27 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/etc.bundle
+   28 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/config_file.rb
+   29 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext/build_error.rb
+   30 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext/builder.rb
+   31 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext/configure_builder.rb
+   32 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/fileutils.rb
+   33 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/delegate.rb
+   34 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/tmpdir.rb
+   35 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/tempfile.rb
+   36 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext/ext_conf_builder.rb
+   37 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext/rake_builder.rb
+   38 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/optparse.rb
+   39 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/command.rb
+   40 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext/cmake_builder.rb
+   41 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/ext.rb
+   42 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/rubygems_integration.rb
+   43 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/current_ruby.rb
+   44 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/dependency.rb
+   45 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/shared_helpers.rb
+   46 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/gem_path_manipulation.rb
+   47 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/gem_helpers.rb
+   48 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/match_platform.rb
+   49 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/rubygems_ext.rb
+   50 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/version.rb
+   51 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler.rb
+   52 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/common.rb
+   53 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/generic.rb
+   54 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/ftp.rb
+   55 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/http.rb
+   56 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/https.rb
+   57 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/ldap.rb
+   58 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/ldaps.rb
+   59 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri/mailto.rb
+   60 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/uri.rb
+   61 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/settings.rb
+   62 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/path_support.rb
+   63 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/digest.bundle
+   64 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/digest.rb
+   65 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/digest/sha1.bundle
+   66 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/set.rb
+   67 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/definition.rb
+   68 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/dependency.rb
+   69 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/ruby_dsl.rb
+   70 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/dsl.rb
+   71 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/source_list.rb
+   72 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/source.rb
+   73 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/socket.bundle
+   74 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/socket.rb
+   75 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/timeout.rb
+   76 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/protocol.rb
+   77 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/zlib.bundle
+   78 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/stringio.bundle
+   79 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/exceptions.rb
+   80 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/header.rb
+   81 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/generic_request.rb
+   82 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/request.rb
+   83 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/requests.rb
+   84 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/response.rb
+   85 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/responses.rb
+   86 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/proxy_delta.rb
+   87 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http/backward.rb
+   88 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/net/http.rb
+   89 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/date_core.bundle
+   90 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/date/format.rb
+   91 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/date.rb
+   92 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/time.rb
+   93 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/request/http_pool.rb
+   94 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/request/https_pool.rb
+   95 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/request/connection_pools.rb
+   96 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/request.rb
+   97 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/cgi/core.rb
+   98 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/cgi/util.rb
+   99 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/cgi/cookie.rb
+  100 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/cgi.rb
+  101 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/uri_formatter.rb
+  102 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/fcntl.bundle
+  103 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/openssl.bundle
+  104 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/bn.rb
+  105 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/cipher.rb
+  106 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/config.rb
+  107 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/digest.rb
+  108 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/x509.rb
+  109 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/buffering.rb
+  110 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl/ssl.rb
+  111 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/openssl.rb
+  112 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/securerandom.rb
+  113 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/resolv.rb
+  114 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/remote_fetcher.rb
+  115 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/text.rb
+  116 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/name_tuple.rb
+  117 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/site_ruby/2.1.0/rubygems/spec_fetcher.rb
+  118 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/source/rubygems.rb
+  119 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/strscan.bundle
+  120 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/source/path.rb
+  121 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/source/git.rb
+  122 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/lockfile_parser.rb
+  123 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/lazy_specification.rb
+  124 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/tsort.rb
+  125 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/forwardable.rb
+  126 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/spec_set.rb
+  127 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/environment.rb
+  128 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/runtime.rb
+  129 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/index.rb
+  130 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/remote_specification.rb
+  131 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/endpoint_specification.rb
+  132 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/dep_proxy.rb
+  133 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/setup.rb
+  134 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/logger.rb
+  135 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/2.1.0/x86_64-darwin13.0/bigdecimal.bundle
+  136 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/deprecated.rb
+  137 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/sql.rb
+  138 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/connection_pool.rb
+  139 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/exceptions.rb
+  140 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/query.rb
+  141 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/actions.rb
+  142 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/features.rb
+  143 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/graph.rb
+  144 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/prepared_statements.rb
+  145 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/misc.rb
+  146 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/mutation.rb
+  147 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/sql.rb
+  148 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset/placeholder_literalizer.rb
+  149 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/dataset.rb
+  150 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/connecting.rb
+  151 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/dataset.rb
+  152 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/dataset_defaults.rb
+  153 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/logging.rb
+  154 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/features.rb
+  155 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/misc.rb
+  156 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/query.rb
+  157 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/transactions.rb
+  158 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/schema_generator.rb
+  159 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database/schema_methods.rb
+  160 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/database.rb
+  161 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/timezones.rb
+  162 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/ast_transformer.rb
+  163 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/version.rb
+  164 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/core.rb
+  165 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/default_inflections.rb
+  166 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/inflections.rb
+  167 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/plugins.rb
+  168 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/dataset_module.rb
+  169 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/base.rb
+  170 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/exceptions.rb
+  171 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/errors.rb
+  172 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model/associations.rb
+  173 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/model.rb
+  174 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel.rb
+  175 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/ui.rb
+  176 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/bundler-1.8.5/lib/bundler/ui/silent.rb
+  177 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/utils/pg_types.rb
+  178 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/shared/postgres.rb
+  179 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg_ext.bundle
+  180 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/exceptions.rb
+  181 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/constants.rb
+  182 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/coder.rb
+  183 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/text_encoder.rb
+  184 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/text_decoder.rb
+  185 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/basic_type_mapping.rb
+  186 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/type_map_by_column.rb
+  187 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/connection.rb
+  188 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg/result.rb
+  189 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/pg-0.18.1/lib/pg.rb
+  190 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel_pg-1.6.11/lib/sequel_pg/sequel_pg.rb
+  191 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel_pg-1.6.11/lib/sequel_pg.bundle
+  192 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/adapters/postgres.rb
+  193 /Users/jclark/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/sequel-4.20.0/lib/sequel/connection_pool/threaded.rb
+  194 /Users/jclark/source/newrelic/support/sequel_pg-errors/sequel/extensions/eat_errors.rb
+
+[NOTE]
+You may have encountered a bug in the Ruby interpreter or extension libraries.
+Bug reports are welcome.
+Don't forget to include the above Crash Report log file.
+For details: http://www.ruby-lang.org/bugreport.html
+
+/Users/jclark/source/dotfiles/bin/b: line 10: 51632 Abort trap: 6           bundle exec $@
